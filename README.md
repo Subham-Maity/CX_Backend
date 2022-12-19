@@ -3,7 +3,7 @@ Date:12.20.2022-> Framework: Sprint Boot, String Security, JWT, Spring Data JPA(
 Dev Need: 
 0. Core JAVA (oops , Package, exception, lambda , stream api )
 1. Rest Endpoint 
-2. Data Bae structure(JPA Entities)
+2. Data Base structure(JPA Entities)
 3. Role Based Authentication 
 4. Handling Exceptions 
 5. DTO for Data Transfer 
