@@ -1,4 +1,4 @@
-Date:12.20.2022-> Framework: Sprint Boot, String Security, JWT, Spring Data JPA(Hibernate) and MySQL
+Date:12.20.2022-> Framework: Spring Boot, String Security, JWT, Spring Data JPA(Hibernate) and MySQL
 
 Dev Need: 
 0. Core JAVA (oops , Package, exception, lambda , stream api )
