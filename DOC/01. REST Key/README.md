@@ -77,7 +77,7 @@ Here are a couple of examples of how sub-resources might be used in a blog writi
 *   A client might make an HTTP POST request to the "/articles/123/likes" endpoint to create a new like record for the article with the ID "123". The API would then perform a create operation on the "likes" sub-resource and return a status code indicating the result of the operation.
     
 
-![example](https://github.com/Subham-Maity/CodeXam_Blog_Backend/blob/main/DOC/02.%20REST%20Key/1.png?raw=true)
+![example](https://github.com/Subham-Maity/CodeXam_Blog_Backend/blob/main/DOC/01.%20REST%20Key/1.png?raw=true)
 
 `Syntax` : `http://localhost:8282/resource/{id}/sub-resource`
 
@@ -163,84 +163,3 @@ HTTP response codes are used to indicate the status of a request made to a serve
 *   404 Not Found: If a client requests a blog post that does not exist, the server would return a 404 Not Found status code to indicate that the requested resource could not be found.
 *   500 Internal Server Error: If there is a server-side error that prevents the server from fulfilling a request (e.g. a database error), the server might return a 500 Internal Server Error status code to indicate that something went wrong.
 *   These are just a few examples of how HTTP response codes might be used on a blog writing website. There are many other status codes that could be used in different situations.
-
-List of HTTP Status Codes
-
-| Status codes | Description |
-| --- | --- |
-| 100 Continue | The server has received the request headers, and the client should proceed to send the request body (in the case of a request for which a body needs to be sent; for example, a POST request). Sending a large request body to a server after a request has been rejected for inappropriate headers would be inefficient. To have a server check the request's headers, a client must send Expect: 100-continue as a header in its initial request and receive a 100 Continue status code in response before sending the body. If the client receives an error code such as 403 (Forbidden) or 405 (Method Not Allowed) then it shouldn't send the request's body. The response 417 Expectation Failed indicates that the request should be repeated without the Expect header as it indicates that the server doesn't support expectations (this is the case, for example, of HTTP/1.0 servers). |
-| 101 Switching Protocols | The requester has asked the server to switch protocols and the server has agreed to do so. |
-| 102 Processing | A WebDAV request may contain many sub-requests involving file operations, requiring a long time to complete the request. This code indicates that the server has received and is processing the request, but no response is available yet. This prevents the client from timing out and assuming the request was lost. |
-| 103 Early Hints | Used to return some response headers before final HTTP message. |
-| 200 OK | The request was successful. |
-| 201 Created | The request was successful and a new resource was created. |
-| 202 Accepted | The request was accepted for processing, but the processing has not been completed. |
-| 203 Non-Authoritative Information | The request was successful but the enclosed payload has been modified from that of the origin server's 200 (OK) response by a transforming proxy. |
-| 204 No Content | The request was successful but there was no data to return. |
-| 205 Reset Content | The request was successful but there was no data to return, and the client should reset the document view which caused the request to be sent. |
-| 206 Partial Content | The server is delivering only part of the resource due to a range header sent by the client. |
-| 207 Multi-Status | A Multi-Status response conveys information about multiple resources in situations where multiple status codes might be appropriate. |
-| 208 Already Reported | Used inside a DAV: propstat response element to avoid repeatedly enumerating the internal members of multiple bindings to the same collection. |
-| 226 IM Used | The server has fulfilled a GET request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance. |
-| 300 Multiple Choices | The request has more than one possible response. The user-agent or user should choose one of them. There is no standardized way of choosing one of the responses. |
-| 301 Moved Permanently | The URL of the requested resource has been changed permanently. The new URL is given in the response. |
-| 302 Found | This response code means that the URI of requested resource has been changed temporarily. Further changes in the URI might be made in the future. Therefore, this same URI should be used by the client in future requests. |
-| 303 See Other | The server sent this response to direct the client to get the requested resource at another URI with a GET request. |
-| 304 Not Modified | This is used for caching purposes. It tells the client that the response has not been modified, so the client can continue to use the same cached version of the response. |
-| 305 Use Proxy | Defined in a previous version of the HTTP specification to indicate that a requested response must be accessed by a proxy. It has been deprecated due to security concerns regarding in-band configuration of a proxy. |
-| 306 Switch Proxy | No longer used. Originally meant "Subsequent requests should use the specified proxy." |
-| 307 Temporary Redirect | The request and all future requests should be repeated using another URI. 307 and 308 parallel the behaviors of 302 and 301, but do not allow the HTTP method to change. So, for example, submitting a form to a permanently redirected resource may continue smoothly. |
-| 308 Permanent Redirect | The request and all future requests should be repeated using another URI. 307 and 308 parallel the behaviors of 302 and 301, but do not allow the HTTP method to change. So, for example, submitting a form to a permanently redirected resource may continue smoothly. |
-| 400 Bad Request | The request was invalid or cannot be otherwise served. An accompanying error message will explain further. |
-| 401 Unauthorized | Authentication credentials were missing or incorrect. |
-| 402 Payment Required | Reserved for future use. |
-| 403 Forbidden | The request is understood, but it has been refused or access is not allowed. |
-| 404 Not Found | The URI requested is invalid or the resource requested, such as a user, does not exists. |
-| 405 Method Not Allowed | The request method is known by the server but has been disabled and cannot be used. |
-| 406 Not Acceptable | The request is understood, but it has been refused or access is not allowed. |
-| 407 Proxy Authentication Required | The client must first authenticate itself with the proxy. |
-| 408 Request Timeout | The server timed out waiting for the request. According to HTTP specifications: "The client did not produce a request within the time that the server was prepared to wait. The client MAY repeat the request without modifications at any later time." |
-| 409 Conflict | Indicates that the request could not be processed because of conflict in the request, such as an edit conflict in the case of multiple updates. |
-| 410 Gone | The URI requested is no longer available and has been permanently removed. |
-| 411 Length Required | The request did not specify the length of its content, which is required by the requested resource. |
-| 412 Precondition Failed | The server does not meet one of the preconditions that the requester put on the request. |
-| 413 Payload Too Large | The request is larger than the server is willing or able to process. |
-| 414 URI Too Long | The URI provided was too long for the server to process. |
-| 415 Unsupported Media Type | The request entity has a media type which the server or resource does not support. |
-| 416 Range Not Satisfiable | The client has asked for a portion of the file, but the server cannot supply that portion. |
-| 417 Expectation Failed | The server cannot meet the requirements of the Expect request-header field. |
-| 418 I'm a teapot | The HTCPCP server is a teapot. This code was defined in 1998 as one of the traditional IETF April Fools' jokes, in RFC 2324, Hyper Text Coffee Pot Control Protocol, and is not expected to be implemented by actual HTTP servers. |
-| 421 Misdirected Request | The request was directed at a server that is not able to produce a response. |
-| 422 Unprocessable Entity | The request was well-formed but was unable to be followed due to semantic errors. |
-| 423 Locked | The resource that is being accessed is locked. |
-| 424 Failed Dependency | The request failed due to failure of a previous request. |
-| 425 Too Early | Indicates that the server is unwilling to risk processing a request that might be replayed. |
-| 426 Upgrade Required | The client should switch to a different protocol such as TLS/1.0, given in the Upgrade header field. |
-| 428 Precondition Required | The origin server requires the request to be conditional. |
-| 429 Too Many Requests | The user has sent too many requests in a given amount of time. |
-| 431 Request Header Fields Too Large | The server is unwilling to process the request because either an individual header field, or all the header fields collectively, are too large. |
-| 451 Unavailable For Legal Reasons | A server operator has received a legal demand to deny access to a resource or to a set of resources that includes the requested resource. |
-| 500 Internal Server Error | A generic error message, given when an unexpected condition was encountered and no more specific message is suitable. |
-| 501 Not Implemented | The server either does not recognize the request method, or it lacks the ability to fulfill the request. |
-| 502 Bad Gateway | The server was acting as a gateway or proxy and received an invalid response from the upstream server. |
-| 503 Service Unavailable | The server is currently unavailable (because it is overloaded or down for maintenance). Generally, this is a temporary state. |
-| 504 Gateway Timeout | The server was acting as a gateway or proxy and did not receive a timely response from the upstream server. |
-| 505 HTTP Version Not Supported | The server does not support the HTTP protocol version used in the request. |
-| 506 Variant Also Negotiates | Transparent content negotiation for the request results in a circular reference. |
-| 507 Insufficient Storage | The server is unable to store the representation needed to complete the request. |
-| 508 Loop Detected | The server detected an infinite loop while processing the request. |
-| 510 Not Extended | Further extensions to the request are required for the server to fulfill it. |
-| 511 Network Authentication Required | The client needs to authenticate to gain network access. |
-| 520 Unknown Error | The 520 error is used as a "catch-all response for when the origin server returns something unexpected", listing connection resets, large headers, and empty or invalid responses as common triggers. |
-| 521 Web Server Is Down | The 521 error is used as a "catch-all response for when the origin server refuses the connection" or is unreachable, commonly due to a connection timeout. |
-| 522 Connection Timed Out | The 522 error is used as a "catch-all response for when the origin server returns a slow-to-send response or no response at all", particularly during periods of high load. |
-| 523 Origin Is Unreachable | The 523 error is used as a "catch-all response for when the origin server is unreachable or the request times out". |
-| 524 A Timeout Occurred | The 524 error is used as a "catch-all response for when the origin server returns a timeout or "unknown connection closed" error". |
-| 525 SSL Handshake Failed | The 525 error is used as a "catch-all response for when the SSL handshake fails". |
-| 526 Invalid SSL Certificate | The 526 error is used as a "catch-all response for when the SSL certificate is invalid". |
-| 527 Railgun Error | The 527 error is used as a "catch-all response for when the origin server returns a 5xx error code". |
-| 530 Origin DNS Error | The 530 error is used as a "catch-all response for when the origin DNS server cannot be reached". |
-| 561 Unauthorized | An error around authentication returned by a server registered with a load balancer. You configured a listener rule to authenticate users, but the identity provider (IdP) returned an error code when authenticating the user |
-| 598 Network read timeout error | This status code is not specified in any RFCs, but is used by some HTTP proxies to signal a network read timeout behind the proxy to a client in front of the proxy. |
-| 599 Network connect timeout error | This status code is not specified in any RFCs, but is used by some HTTP proxies to signal a network connect timeout behind the proxy to a client in front of the proxy. |
-| 1000 Internal Server Error | A generic error message, given when an unexpected condition was encountered and no more specific message is suitable. |

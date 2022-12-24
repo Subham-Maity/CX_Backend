@@ -91,11 +91,11 @@ The client-server architecture is a common design pattern that is used to build 
 
 The main advantage of the client-server architecture is that it allows the client and server to communicate and exchange data in a decentralized manner, which makes it easy to scale and maintain the system. It also allows for better security, as the client and server can be designed to use secure communication protocols and authentication mechanisms to protect against unauthorized access.
 
-![example](https://github.com/Subham-Maity/CodeXam_Blog_Backend/blob/main/DOC/01.%20REST%20Architecture/1.png?raw=true)
+![example](https://github.com/Subham-Maity/CodeXam_Blog_Backend/blob/main/DOC/00.%20REST%20Architecture/1.png?raw=true)
 
 Example with Explanation
 
-![example](https://github.com/Subham-Maity/CodeXam_Blog_Backend/blob/main/DOC/01.%20REST%20Architecture/2.png?raw=true)
+![example](https://github.com/Subham-Maity/CodeXam_Blog_Backend/blob/main/DOC/00.%20REST%20Architecture/2.png?raw=true)
 
 REST (Representational State Transfer) is a software architectural style that defines a set of constraints and properties for creating web services. It is based on the idea of representing resources, such as data or functionality, in a uniform and predictable way. RESTful web services use HTTP methods, such as GET, POST, PUT, DELETE, etc., to perform operations on resources.
 
